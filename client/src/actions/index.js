@@ -1,4 +1,5 @@
 import streamRequest from '../api/index';
+import history from '../history';
 import {
     SIGN_IN,
     SIGN_OUT,
@@ -29,10 +30,12 @@ export const signOut = () => {
 export const createStream = streamInfo => async (dispatch, getState) => {
     const response = await streamRequest.post('/streams', { ...streamInfo, userId: getState().auth.userId });
     dispatch({ type: CREATE_STREAM, payload: response.data });
+    history.push('/');
 }
 
 export const fetchStream = (id) => async dispatch => {
     const response = await streamRequest.get(`/streams/${id}`);
+    // console.log(response);
     dispatch({ type: FETCH_STREAM, payload: response.data });
 }
 
