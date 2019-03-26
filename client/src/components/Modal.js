@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import history from '../history';
 const modalRoot = document.querySelector('#modal');
-
 
 // <div className="ui dimmer modals visible active">
 //     <div className="ui standard modal visible active">
