@@ -30,7 +30,7 @@ class StreamList extends React.Component {
                     <i className="large middle camera icon aligned" />
                     <div className="content">
                         <div className="title">
-                            <Link to="/streams/show">
+                            <Link to={`/streams/${stream.id}`}>
                                 {stream.title}
                             </Link>
                         </div>
